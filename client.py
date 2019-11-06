@@ -11,6 +11,7 @@ class Client(object):
 
     def __init__(self):
         """
+        TODO: implement this contructor
         Class contructor
         """
         self.client_socket = None # create here your client tcp socket

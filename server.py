@@ -12,12 +12,14 @@ class Server(object):
 
     def __init__(self):
         """
+        TODO: implement this constructor
         Class contructor
         """
         self.server_socket = None  # create here your client tcp socket
 
     def listen(self):
         """
+        TODO: implement this method
         Listen for new connections
         :return: VOID
         """
@@ -25,6 +27,7 @@ class Server(object):
 
     def accept(self):
         """
+        TODO: implement this method
         Accept new clients
         :return:
         """
@@ -32,6 +35,7 @@ class Server(object):
 
     def recieve(self, memory_allocation_size):
         """
+        TODO: implement this method
         Receives data from clients socket
         :param memory_allocation_size:
         :return: deserialized data
@@ -40,6 +44,7 @@ class Server(object):
 
     def send(self, data):
         """
+        TODO: implement this method
         Implements send socket send method
         :param data: raw_data. This data needs to be
                      serialized inside this method
@@ -52,17 +57,11 @@ class Server(object):
 
     def threaded_client(self, conn, client_addr):
         """
-        I made this method for you. It is already completed and no need to modify it.
-        This already creates the threads for the proxy is up to you to find out where to put it.
-        Hint: since we are using only  non-persistent connections. Then, when a clients connects,
-        it also means that it already has a request to be made. Think about the difference
-        between this and assign#1 when you created a new thread.
+        TODO: implement this method
         :param conn:
         :param client_addr:
-        :return:
+        :return: a threaded client.
         """
-        #proxy_thread = ProxyThread(conn, client_addr)
-        #proxy_thread.init_thread()
         return None
 
 

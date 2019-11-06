@@ -9,14 +9,21 @@ class Resource(object):
     """
     This class provides services to handle resources
     """
-    def __init__(self, resource_id, file_path, file_len, piece_len ):
-
+    def __init__(self, resource_id = 0, file_path = None, file_len = 0, piece_len = 0 ):
+        """
+        TODO: complete the implementation of this constructor.
+        :param resource_id: default 0
+        :param file_path: default None
+        :param file_len: default 0
+        :param piece_len: default 0
+        """
         self.file_path = file_path
         self.resource_id = resource_id
         self.len = file_len
         self.max_piece_size = piece_len
         self._create_pieces() # creates the file's pieces
         self.trackers = []
+
 
     def add_tracker(self, ip_address, port):
         """
@@ -30,7 +37,12 @@ class Resource(object):
         return None
 
     def get_trackers(self):
+        """
+        Already implemented
+        :return: the list of trackers for this resource
+        """
         return self.trackers
+
     def len(self):
         """
         Already implementeted
@@ -77,6 +89,21 @@ class Resource(object):
         """
         hashes = []
         return hashes
+
+    def parse_metainfo_file(self, file_path):
+        """
+        TODO: implement this method
+        Parse the ,torrent file containing the metainfo for this resource
+        and save all the info in instances variables of this class so the
+        metainfo of the torrent can be easily accessible by the peer.
+        :param file_path: the path to the metainfo (extension torrent)
+                          file to be parsed
+        :return: a python dictionary with the following keys:
+                 (file_name, tracker_ip_address, tracker_port, piece_len, file_len, pieces}
+                 Note that the key pieces will store the list of sh1a hashes from each piece
+                 of the file. You can assume 
+        """
+        return None
 
 
 class Piece(object):
@@ -130,7 +157,7 @@ class Piece(object):
         """
         return self.hash
 
-    def is_equal(self, piece):
+    def is_equal_to(self, piece):
         """
         TODO: implement this method
         Check if two pieces are the same.
