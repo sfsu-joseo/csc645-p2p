@@ -23,7 +23,7 @@ class Client(object):
         :param port:
         :return: VOID
         """
-        return None # remove this after implemented
+        pass
 
     def send(self, data):
         """
@@ -35,7 +35,7 @@ class Client(object):
                      with pickle
         :return: VOID
         """
-        return None # remove this after implemented
+        pass
 
     def recieve(self, memory_allocation_size):
         """
@@ -50,4 +50,4 @@ class Client(object):
         TODO: implement the close mechanish of a client socket
         :return: VOID
         """
-        return None # remove this after implementation
+        pass

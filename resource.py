@@ -23,6 +23,7 @@ class Resource(object):
         self.max_piece_size = piece_len
         self._create_pieces() # creates the file's pieces
         self.trackers = []
+        self.completed = []  # the pieces that are already completed
 
 
     def add_tracker(self, ip_address, port):
@@ -69,6 +70,7 @@ class Resource(object):
         """
         self.pieces = [] # list of objects of pieces. (see Piece class)
 
+
     def get_piece(self, index):
         """
         Already Implemented
@@ -90,7 +92,7 @@ class Resource(object):
         hashes = []
         return hashes
 
-    def parse_metainfo_file(self, file_path):
+    def parse_metainfo(self, file_path):
         """
         TODO: implement this method
         Parse the ,torrent file containing the metainfo for this resource
@@ -101,7 +103,7 @@ class Resource(object):
         :return: a python dictionary with the following keys:
                  (file_name, tracker_ip_address, tracker_port, piece_len, file_len, pieces}
                  Note that the key pieces will store the list of sh1a hashes from each piece
-                 of the file. You can assume 
+                 of the file. You can assume
         """
         return None
 
@@ -116,6 +118,7 @@ class Piece(object):
         self.piece_id = piece_id
         self._create_blocks()
         self.hash = self._hash_sha1()
+        self.completed = False
 
 
     def _create_blocks(self, max_size = 16):
@@ -180,6 +183,20 @@ class Piece(object):
         :return:
         """
         return self.blocks
+
+    def is_completed(self):
+        """
+        Already implemented
+        :return:
+        """
+        return self.completed
+
+    def set_to_complete(self):
+        """
+        Already implemented
+        :return:
+        """
+        self.completed = True
 
 
 class Block(object):

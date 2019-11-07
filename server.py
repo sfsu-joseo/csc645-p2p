@@ -23,7 +23,7 @@ class Server(object):
         Listen for new connections
         :return: VOID
         """
-        return None
+        pass
 
     def accept(self):
         """
@@ -53,7 +53,7 @@ class Server(object):
                      with pickle
         :return: VOID
         """
-        return None  # remove this after implemented
+        pass
 
     def threaded_client(self, conn, client_addr):
         """

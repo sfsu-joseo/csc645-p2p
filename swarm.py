@@ -14,25 +14,31 @@ class Swarm(object):
 
     def add_peer(self, peer):
         """
-
+        TODO: implement this method
         :param peer: add the peer object
         :return: VOID
         """
-        self.peers.append(peer)
+        pass
 
-    def delete_peer(self, peer_id):
+    def delete_peer(self, peer):
         """
-
+         TODO: implement this method
         :param peer_id: the client id of the peer
         :return: VOID
         """
-        self.peers.remove(peer)
+        pass
+
+    def peers(self):
+        """
+        TODO: implement this method
+        :return: the list of peers connected to the swarm
+        """
+        return None
 
     def resource_id(self):
         """
-
-        :return: the file id that is being
+        TODO: implement this method
+        :return: the file id of the file that is being
                  shared by this swarm
         """
-        if self.resource_id:
-            return self.resource_id
+        return None

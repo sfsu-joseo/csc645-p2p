@@ -15,19 +15,26 @@ from server import Server
 
 class Tracker(Server):
 
-    IP_ADDRESS = ""
-    PORT = 0000
+    PORT = 12000
+    IP_ADDRESS = "127.0.0.1"
 
-    def __init__(self):
+    def __init__(self, ip_address = None, port = 0):
         """
-        Inherits from class Server
+        TODO: finish constructor implementation (if needed)
+        If parameters ip_address and port are not set at the object creation time,
+        you need to use the default IP address and the default port set in the class constants.
+        :param ip_address:
+        :param port:
         """
         Server.__init__(self)
+        self.port = port
+        self.ip = ip_address
         # the list of swarms that this tracker keeps
         self.swarms = []
 
     def add_swarm(self, swarm):
         """
+        Already implemented
         Add a Swarm object to the swarms list of the tracker
         :param swarm:
         :return:
@@ -36,45 +43,51 @@ class Tracker(Server):
 
     def remove_swarm(self, resource_id):
         """
+        TODO: implement this method
         Given a resource id, remove the swarm from the tracker
         that is sharing this resource id.
         This happens normally when there is no seeder sharing
         this resource.
         :param resource_id:
-        :return:
+        :return: VOID
         """
-        return None
+        pass
 
     def add_peer_to_swarm(self, peer, resource_id):
         """
+        TODO: implement this method
         Based on the resource_id provided, iterate over the
         swarms list, and when resource_id matchs, add the
         new peer to the swarm.
         :param peer:
         :param resource_id:
-        :return:
+        :return: VOID
         """
+        pass
+
     def change_peer_status(self, resource_id):
         """
+        TODO: implement this method
         When a peers in a swarm report a change of status
         (leecher or seeder) then, get the swarm object from
         the swarm list, and update the status in the swarm of
         such peer.
         :param resource_id:
-        :return:
+        :return: VOID
         """
+        pass
 
-    def send_peers(self, requester_peer, resource_id):
+    def send_peers(self, peer_socket, resource_id):
         """
+        TODO: implement this method
         Iterate the swarms list, and find the one which match with
-        the resource id provided as a parameter. Then, extract the
-        peers sharing this file in the swarm, and send their connection
-        info (ip adresses and port) to the requested_peer.
-        :param requester_peer: the peer that is requesting the info
+        the resource id provided as a parameter. Then, serialize the
+        swarm and send the swarm object to the peer requesting it.
+        :param peer_socket: the peer socket that is requesting the info
         :param resource_id: the resource id to identify the swarm
                sharing this resource
-        :return:
+        :return: VOID
         """
-        return None
+        pass
 
 
